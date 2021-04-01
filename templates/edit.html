@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Post</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+</head>
+<body>
+	<div class="w3-card-4">
+			<div class="w3-container w3-teal">
+		    	<h2>Edit Post</h2>
+		  	</div>
+		  	<form class="w3-container" action="" method="POST">
+		    	<p>      
+		    		<label class="w3-text-teal"><b>Post Text</b></label>
+		    		<textarea cols="50" rows="10" class="w3-input w3-border w3-light-grey" name="editor"></textarea>
+		    	</p>
+		    	<p>
+		    		<input type="submit" class="w3-btn w3-teal" value="Update">
+		    		<a href="/myproducts" class="w3-btn w3-red">Go Back</a>
+		    	</p>
+		  	</form>
+		</div>
+</body>
+</html>

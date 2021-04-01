@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Post</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+</head>
+<body>
+	<div class="w3-responsive w3-container">
+		<div class="w3-bar w3-border w3-light-grey">
+  			<a href="/home" class="w3-bar-item w3-button">Home</a>
+  			<a href="/add" class="w3-bar-item w3-button">Add Post</a>
+  			<a href="/myproducts" class="w3-bar-item w3-button">My Posts</a>
+  			<a href="/logout" class="w3-bar-item w3-button w3-green w3-right">Log Out</a>
+		</div>
+		<br>
+		<div class="w3-card-4">
+			<div class="w3-container w3-teal">
+		    	<h2>Add Posts</h2>
+		  	</div>
+		  	<form class="w3-container" action="" method="POST">
+		    	<p>      
+		    		<textarea cols="50" rows="10" name="editor"></textarea>
+		    	</p>
+		    	<p>
+		    		<input type="submit" class="w3-btn w3-teal" value="Add"  name="">
+		    	</p>
+		  	</form>
+		</div>
+		<br>
+		{% if msg %}
+			<div class="w3-panel w3-red">
+	  			<h3>{{msg}}</h3>
+			</div> 
+		{% endif %}
+		{% if error %}
+			<div class="w3-panel w3-red">
+	  			<h3>{{error}}</h3>
+			</div> 
+		{% endif %}
+	</div>
+</body>
+</html>

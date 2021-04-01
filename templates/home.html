@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+</head>
+<body>
+	<div class="w3-container">
+		<div class="w3-bar w3-border w3-light-grey">
+  			<a href="/home" class="w3-bar-item w3-button">Home</a>
+  			<a href="/add" class="w3-bar-item w3-button">Add Post</a>
+  			<a href="/myproducts" class="w3-bar-item w3-button">My Posts</a>
+  			<a href="/logout" class="w3-bar-item w3-button w3-green w3-right">Log Out</a>
+		</div>
+		<br>
+		{% for i in range(0,length) %}
+			<ul class="w3-ul w3-card-4" style="width:50%">
+  				<li><b>{{ articles[i][0] }}</b></li>
+  				<li>{{ articles[i][1] }}</li>
+  				<li>{{ articles[i][2] }}</li>
+			</ul>
+			<br>
+    	{% endfor %}
+
+    	{% if msg %}
+  			<div class="w3-panel w3-red">{{msg}}</div>
+		{% endif %}
+	</div>
+</body>
+</html>

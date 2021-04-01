@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+</head>
+<body>
+	<div class="w3-responsive w3-container">
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+    			{% for category, message in messages %}
+      				<div class="alert alert-{{ category }}">{{ message }}</div>
+    			{% endfor %}
+  			{% endif %}
+		{% endwith %}
+		<br><br>
+		<div class="w3-card-4">
+			<div class="w3-container w3-teal">
+		    	<h2>Create Account</h2>
+		  	</div>
+		  	<form class="w3-container" action="" method="POST">
+		  		<p>      
+		    		<label class="w3-text-teal"><b>First Name</b></label>
+		    		<input class="w3-input w3-border w3-light-grey" name="first" value="" type="text">
+		    	</p>
+		    	<p>      
+		    		<label class="w3-text-teal"><b>Last Name</b></label>
+		    		<input class="w3-input w3-border w3-light-grey" name="last" value="" type="text">
+		    	</p>
+		    	<p>      
+		    		<label class="w3-text-teal"><b>Username</b></label>
+		    		<input class="w3-input w3-border w3-light-grey" name="username" value="" type="text">
+		    	</p>
+		    	<p>      
+		    		<label class="w3-text-teal"><b>Password</b></label>
+		    		<input class="w3-input w3-border w3-light-grey" name="password" value="" type="password">
+		    	</p>
+		    	<p>
+		    		<input type="submit" class="w3-btn w3-teal" value="Register" name="">
+		    		<a href="/login" class="w3-btn w3-teal">Log In</a>
+		    	</p>
+		  	</form>
+		</div>
+		{% if error %}
+			<div class="w3-panel w3-red">
+	  			<h3>{{error}}</h3>
+			</div> 
+		{% endif %}
+	</div>
+</body>
+</html>
